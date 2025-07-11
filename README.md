@@ -10,7 +10,9 @@ Además, se analiza el rendimiento del modelo a lo largo del tiempo (meses del a
 
 ---
 
-## 🗂️ Estructura del Proyecto
+## 📁 Estructura del Proyecto
+
+```text
 ├── README.md               <- Este archivo.
 ├── requirements.txt        <- Dependencias necesarias.
 ├── data/
