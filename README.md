@@ -52,8 +52,11 @@ Guarda los archivos descargados en la carpeta: `data/raw/`.
 from src.modeling.predict import predict_for_month
 
 model = load_model("models/random_forest_january.joblib")
+
 df = pd.read_parquet("data/processed/february.parquet")
+
 f1 = predict_for_month(model, df)
+
 print(f"F1-score febrero: {f1}")
 
 ## 🤝 Cómo contribuir
