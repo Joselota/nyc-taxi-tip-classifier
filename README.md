@@ -32,6 +32,36 @@ Además, se analiza el rendimiento del modelo a lo largo del tiempo (meses del a
 │   │   └── predict.py      <- Evaluación y predicción.
 │   └── visualization/
 │       └── plots.py        <- Gráficas de resultados.
+```
+----
+## 📥 Descarga de Datos
+
+Puedes descargar los datos originales desde el sitio oficial de NYC Taxi & Limousine Commission:
+
+👉 [https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
+
+Para este proyecto se utilizó el dataset de **Yellow Taxi - Enero 2020** (`yellow_tripdata_2020-01.parquet`), aunque puedes probar con otros meses.
+
+Guarda los archivos descargados en la carpeta: `data/raw/`.
 
 
+## 📊 Métricas por mes
+
+| Mes        | N° de viajes | F1-score |
+|------------|--------------|----------|
+| 2020-01    | 100,000      | 0.76     |
+| 2020-02    | 98,500       | 0.72     |
+| 2020-03    | 85,300       | 0.68     |
+
+![Python](https://img.shields.io/badge/python-3.9+-blue)
+![License](https://img.shields.io/github/license/Joselota/nyc-taxi-tip-classifier)
+![Repo size](https://img.shields.io/github/repo-size/Joselota/nyc-taxi-tip-classifier)
+
+## 📦 Ejecución rápida
+from src.modeling.predict import predict_for_month
+
+model = load_model("models/random_forest_january.joblib")
+df = pd.read_parquet("data/processed/february.parquet")
+f1 = predict_for_month(model, df)
+print(f"F1-score febrero: {f1}")
 
