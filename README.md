@@ -65,3 +65,15 @@ df = pd.read_parquet("data/processed/february.parquet")
 f1 = predict_for_month(model, df)
 print(f"F1-score febrero: {f1}")
 
+## 🤝 Cómo contribuir
+
+¿Tienes ideas para mejorar este proyecto? ¡Contribuciones son bienvenidas!
+
+1. Haz un fork del repositorio.
+2. Crea una rama con tu mejora: `git checkout -b mejora-nueva`.
+3. Haz commit de tus cambios: `git commit -m 'Agrega nueva funcionalidad'`.
+4. Haz push a tu rama: `git push origin mejora-nueva`.
+5. Abre un Pull Request.
+
+
+
