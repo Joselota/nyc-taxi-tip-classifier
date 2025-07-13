@@ -94,4 +94,24 @@ Además, se analiza el rendimiento del modelo a lo largo del tiempo (meses del a
 
 ---
 
+## ⚠️ Requisitos previos
+
+- Python 3.9 o superior
+- pip (gestor de paquetes de Python)
+- (Opcional) Anaconda/Miniconda para gestión de entornos
+
+> ⚠️ **Nota:** El procesamiento de los archivos Parquet puede requerir varios GB de RAM y algo de tiempo, dependiendo de tu equipo.
+
+## 🛠️ Soporte
+
+¿Tienes dudas o encontraste un bug?  
+Abre un issue en [GitHub Issues](https://github.com/Joselota/nyc-taxi-tip-classifier/issues) o contacta a Ingrid Solis(Joselota).
+
+## 📚 Créditos
+
+- Datos originales: [NYC Taxi & Limousine Commission](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
+- Inspirado en prácticas de ingeniería de datos y ciencia de datos reproducible.
+
+---
+
 
