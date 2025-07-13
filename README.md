@@ -38,36 +38,94 @@ Además, se analiza el rendimiento del modelo a lo largo del tiempo (meses del a
 │       └── plots.py        <- Gráficas de resultados.
 ```
 ----
-## 📥 Descarga de Datos
 
-Puedes descargar los datos originales desde el sitio oficial de NYC Taxi & Limousine Commission:
+## 🚀 Instalación y ejecución desde cero
 
-👉 [https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
+1. **Clona el repositorio:**
+   ```bash
+   git clone https://github.com/Joselota/nyc-taxi-tip-classifier.git
+   cd nyc-taxi-tip-classifier
+   ```
 
-Para este proyecto se utilizó el dataset de **Yellow Taxi - Enero 2020** (`yellow_tripdata_2020-01.parquet`), aunque puedes probar con otros meses.
+2. **Crea un entorno virtual (opcional pero muy recomendado):**
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate  # En Mac/Linux
+   # .\venv\Scripts\activate  # En Windows
+   ```
 
-Guarda los archivos descargados en la carpeta: `data/raw/`.
+3. **Instala las dependencias:**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-## 📦 Ejecución rápida
-from src.modeling.predict import predict_for_month
+4. **Descarga los datos y colócalos en `data/raw/`**  
+   (Ver sección anterior para el enlace de descarga).
 
-model = load_model("models/random_forest_january.joblib")
+5. **Ejecuta el pipeline de procesamiento y entrenamiento:**  
+   Por ejemplo:
+   ```bash
+   python src/data/dataset.py
+   python src/features/build_features.py
+   python src/modeling/train.py
+   ```
 
-df = pd.read_parquet("data/processed/february.parquet")
+6. **Haz predicciones:**
+   ```bash
+   python src/modeling/predict.py
+   ```
 
-f1 = predict_for_month(model, df)
+> Si usas Anaconda, puedes crear el entorno con:
+> ```bash
+> conda create -n taxi-tip python=3.11
+> conda activate taxi-tip
+> pip install -r requirements.txt
+> ```
 
-print(f"F1-score febrero: {f1}")
+---
 
-## 🤝 Cómo contribuir
+Esto permitirá que cualquier persona pueda reproducir tu proyecto fácilmente.  
+¿Quieres que lo agregue al README por ti?## 🚀 Instalación y ejecución desde cero
 
-¿Tienes ideas para mejorar este proyecto? ¡Contribuciones son bienvenidas!
+1. **Clona el repositorio:**
+   ```bash
+   git clone https://github.com/Joselota/nyc-taxi-tip-classifier.git
+   cd nyc-taxi-tip-classifier
+   ```
 
-1. Haz un fork del repositorio.
-2. Crea una rama con tu mejora: `git checkout -b mejora-nueva`.
-3. Haz commit de tus cambios: `git commit -m 'Agrega nueva funcionalidad'`.
-4. Haz push a tu rama: `git push origin mejora-nueva`.
-5. Abre un Pull Request.
+2. **Crea un entorno virtual (opcional pero recomendado):**
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate  # En Mac/Linux
+   # .\venv\Scripts\activate  # En Windows
+   ```
 
+3. **Instala las dependencias:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Descarga los datos y colócalos en `data/raw/`**  
+   (Ver sección anterior para el enlace de descarga).
+
+5. **Ejecuta el pipeline de procesamiento y entrenamiento:**  
+   Por ejemplo:
+   ```bash
+   python src/data/dataset.py
+   python src/features/build_features.py
+   python src/modeling/train.py
+   ```
+
+6. **Haz predicciones:**
+   ```bash
+   python src/modeling/predict.py
+   ```
+
+> Si usas Anaconda, puedes crear el entorno con:
+> ```bash
+> conda create -n taxi-tip python=3.11
+> conda activate taxi-tip
+> pip install -r requirements.txt
+> ```
 
 
