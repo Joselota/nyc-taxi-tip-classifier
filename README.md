@@ -60,14 +60,13 @@ Además, se analiza el rendimiento del modelo a lo largo del tiempo (meses del a
    ```
 
 4. **Descargar los datos crudos**  
-   Debes descargar manualmente los archivos Parquet desde el sitio oficial de NYC Taxi & Limousine Commission:
-    📎 https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+   Debes descargar manualmente los archivos Parquet desde el sitio oficial de NYC Taxi & Limousine Commission: https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+    
     Guárdalos en la carpeta data/raw/ con los siguientes nombres:
-
-    yellow_tripdata_2020-01.parquet
-    yellow_tripdata_2020-02.parquet
-    yellow_tripdata_2020-03.parquet
-    yellow_tripdata_2020-04.parquet
+    * yellow_tripdata_2020-01.parquet
+    * yellow_tripdata_2020-02.parquet
+    * yellow_tripdata_2020-03.parquet
+    * yellow_tripdata_2020-04.parquet
 
 5. **Procesar datos y entrenar modelo base (enero):**  
    Por ejemplo:
