@@ -59,73 +59,40 @@ Además, se analiza el rendimiento del modelo a lo largo del tiempo (meses del a
    pip install -r requirements.txt
    ```
 
-4. **Descarga los datos y colócalos en `data/raw/`**  
-   (Ver sección anterior para el enlace de descarga).
+4. **Descargar los datos crudos**  
+   Debes descargar manualmente los archivos Parquet desde el sitio oficial de NYC Taxi & Limousine Commission:
+    📎 https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+    Guárdalos en la carpeta data/raw/ con los siguientes nombres:
 
-5. **Ejecuta el pipeline de procesamiento y entrenamiento:**  
+    yellow_tripdata_2020-01.parquet
+    yellow_tripdata_2020-02.parquet
+    yellow_tripdata_2020-03.parquet
+    yellow_tripdata_2020-04.parquet
+
+5. **Procesar datos y entrenar modelo base (enero):**  
    Por ejemplo:
    ```bash
-   python src/data/dataset.py
-   python src/features/build_features.py
-   python src/modeling/train.py
+        python -m src.pipeline_mes --mes 01
+        python -m src.modeling.train
    ```
 
-6. **Haz predicciones:**
+6. **Evaluar el modelo base:**
    ```bash
-   python src/modeling/predict.py
+   python -m src.modeling.predict
    ```
 
-> Si usas Anaconda, puedes crear el entorno con:
-> ```bash
-> conda create -n taxi-tip python=3.11
-> conda activate taxi-tip
-> pip install -r requirements.txt
-> ```
+7. **Evaluación mensual del modelo:**
+    ```bash
+    python -m src.modeling.evaluate_by_month
+    ```
+    Esto generará una tabla con el F1-score por mes y cantidad de registros evaluados.
+
+8. **Visualización de resultados**
+    ```bash
+    python -m src.visualization.run_plots
+    ```
+    Se guardarán los gráficos en la carpeta figures/.
 
 ---
-
-Esto permitirá que cualquier persona pueda reproducir tu proyecto fácilmente.  
-¿Quieres que lo agregue al README por ti?## 🚀 Instalación y ejecución desde cero
-
-1. **Clona el repositorio:**
-   ```bash
-   git clone https://github.com/Joselota/nyc-taxi-tip-classifier.git
-   cd nyc-taxi-tip-classifier
-   ```
-
-2. **Crea un entorno virtual (opcional pero recomendado):**
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate  # En Mac/Linux
-   # .\venv\Scripts\activate  # En Windows
-   ```
-
-3. **Instala las dependencias:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Descarga los datos y colócalos en `data/raw/`**  
-   (Ver sección anterior para el enlace de descarga).
-
-5. **Ejecuta el pipeline de procesamiento y entrenamiento:**  
-   Por ejemplo:
-   ```bash
-   python src/data/dataset.py
-   python src/features/build_features.py
-   python src/modeling/train.py
-   ```
-
-6. **Haz predicciones:**
-   ```bash
-   python src/modeling/predict.py
-   ```
-
-> Si usas Anaconda, puedes crear el entorno con:
-> ```bash
-> conda create -n taxi-tip python=3.11
-> conda activate taxi-tip
-> pip install -r requirements.txt
-> ```
 
 
