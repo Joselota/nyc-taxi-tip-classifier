@@ -44,14 +44,14 @@ def save_features(df, path):
     print(f"✅ Features guardadas en: {path}")
 
 def main():
-    print("📥 Cargando dataset limpio...")
+    print("Cargando dataset limpio...")
     df = load_data(INPUT_PATH)
-    print(f"🔢 Filas cargadas: {len(df)}") 
+    print(f"Filas cargadas: {len(df)}") 
 
-    print("🛠️  Generando variables predictoras...")
+    print("Generando variables predictoras...")
     df_feat = build_features(df)
 
-    print("💾 Guardando archivo con features...")
+    print("Guardando archivo con features...")
     save_features(df_feat, OUTPUT_PATH)
 
 if __name__ == "__main__":

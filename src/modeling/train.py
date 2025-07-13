@@ -25,18 +25,18 @@ def save_model(model, path):
     print(f"✅ Modelo guardado en: {path}")
 
 def main():
-    print("📥 Cargando dataset con features...")
+    print("Cargando dataset con features...")
     df = load_data(DATA_PATH)
 
-    print("🔍 Separando X e y...")
+    print("Separando X e y...")
     X = df.drop(columns=["is_tip_generous"])
     y = df["is_tip_generous"]
 
-    print("🧠 Entrenando modelo...")
+    print("Entrenando modelo...")
     X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=42)
     model = train_model(X_train, y_train)
 
-    print("💾 Guardando modelo...")
+    print("Guardando modelo...")
     save_model(model, MODEL_PATH)
 
 if __name__ == "__main__":

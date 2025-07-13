@@ -245,7 +245,7 @@ optree==0.13.1
 outcome==1.3.0.post0
 overrides @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_a4tzft66ma/croot/overrides_1699371143883/work
 packaging @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_2algm5p9lp/croot/packaging_1693575178038/work
-pandas==1.5.3
+pandas==2.3.1
 pandas-datareader==0.10.0
 pandocfilters @ file:///opt/conda/conda-bld/pandocfilters_1643405455980/work
 panel @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_acrgvxlmc8/croot/panel_1706539573796/work

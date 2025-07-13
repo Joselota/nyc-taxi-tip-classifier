@@ -24,16 +24,16 @@ def evaluate(model, X, y):
     print(cm)
 
 def main():
-    print("📦 Cargando modelo...")
+    print("Cargando modelo...")
     model = load_model(MODEL_PATH)
 
-    print("📥 Cargando datos de evaluación...")
+    print("Cargando datos de evaluación...")
     df = load_data(DATA_PATH)
 
     X = df.drop(columns=["is_tip_generous"])
     y = df["is_tip_generous"]
 
-    print("🔍 Evaluando...")
+    print("Evaluando...")
     evaluate(model, X, y)
 
 if __name__ == "__main__":

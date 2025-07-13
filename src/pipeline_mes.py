@@ -15,16 +15,16 @@ def run_pipeline(month_str):
         print(f"❌ Archivo no encontrado: {raw_file}")
         return
 
-    print(f"📥 Cargando archivo: {raw_file}")
+    print(f"Cargando archivo: {raw_file}")
     df = pd.read_parquet(raw_file)
     df = df.head(100_000)  # Opcional: usar muestra para pruebas
 
-    print("🧼 Limpiando datos...")
+    print("Limpiando datos...")
     df_clean = clean_data(df)
     df_clean.to_csv(cleaned_file, index=False)
     print(f"✅ Guardado: {cleaned_file}")
 
-    print("🛠️ Generando features...")
+    print("Generando features...")
     df_clean["tpep_pickup_datetime"] = pd.to_datetime(df_clean["tpep_pickup_datetime"])
     df_clean["tpep_dropoff_datetime"] = pd.to_datetime(df_clean["tpep_dropoff_datetime"])
     df_feat = build_features(df_clean)

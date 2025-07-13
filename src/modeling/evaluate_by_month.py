@@ -23,17 +23,17 @@ def evaluate_for_month(model, month):
         return {"mes": f"2020-{month}", "f1_score": None, "n": 0}
 
 def main():
-    print("📦 Cargando modelo entrenado en enero...")
+    print("Cargando modelo entrenado en enero...")
     model = load_model(MODEL_PATH)
 
     resultados = []
     for mes in MONTHS:
-        print(f"📊 Evaluando mes: 2020-{mes}")
+        print(f"Evaluando mes: 2020-{mes}")
         resultado = evaluate_for_month(model, mes)
         resultados.append(resultado)
 
     df_resultados = pd.DataFrame(resultados)
-    print("\n🧾 Resultados por mes:")
+    print("\nResultados por mes:")
     print(df_resultados)
 
     # Opcional: guardar resultados
